@@ -41,7 +41,8 @@ function App() {
         <UserProfile
         name="Alice"
         age="25"
-        bio="Loves hiking and photography"/>
+        bio="Loves hiking and photography"
+        />
       </div>
     </>
   );
