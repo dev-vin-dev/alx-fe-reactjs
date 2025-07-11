@@ -36,8 +36,8 @@ function App() {
       <div>
         <WelcomeMessage />
         <Header />
-        <MainContent/>
-        <Footer/>
+        <MainContent />
+        <Footer />
         <UserProfile
         name="Alice"
         age="25"
