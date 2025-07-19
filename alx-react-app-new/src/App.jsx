@@ -7,6 +7,8 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
+import React from 'react';
+import Counter from './components/Counter';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,6 +45,10 @@ function App() {
         age="25"
         bio="Loves hiking and photography"
         />
+      </div>
+      <div>
+        <h1 style={{ textAlign:'center'}}>Simple Counter App</h1>
+        <Counter />
       </div>
     </>
   );
