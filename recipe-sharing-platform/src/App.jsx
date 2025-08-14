@@ -4,17 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react'
 import Homepage from './components/Homepage'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import RecipeDetail from './components/RecipeDetail';
 
 
 function App() {
 
   return (
     <>
-    <div className="bg-gray-100 min-h-screen">
-      <Homepage />
-    </div>
+    <Router>
+      <div className='bg-gray-100 min-h-screen'>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/recipe/:id' element={<RecipeDetail />} />
+        </Routes>
+      </div>
+    </Router>
     </>
   )
 }
 
-export default App
+export default App;
