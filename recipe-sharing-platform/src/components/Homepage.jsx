@@ -2,7 +2,7 @@ import React, {useState, useEffect } from "react";
 import recipeData from "../data.json";
 import { Link } from "react-router-dom";
 
-const Homepage = () => {
+const HomePage = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect (()=> {
@@ -43,4 +43,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage;
+export default HomePage;
