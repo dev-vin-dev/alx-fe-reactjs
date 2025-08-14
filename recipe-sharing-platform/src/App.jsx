@@ -6,6 +6,7 @@ import React from 'react'
 import Homepage from './components/Homepage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeDetail from './components/RecipeDetail';
+import AddRecipeForm from './components/AddRecipeForm';
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
     <Router>
       <div className='bg-gray-100 min-h-screen'>
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route path='/' element={<Homepage />} />
           <Route path='/recipe/:id' element={<RecipeDetail />} />
+          <Route path="/add-recipe" element={<AddRecipeForm />} />
         </Routes>
       </div>
     </Router>
