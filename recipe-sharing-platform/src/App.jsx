@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className='bg-gray-100 min-h-screen'>
         <Routes>
-          <Route path='/' element={<Homepage />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/recipe/:id' element={<RecipeDetail />} />
           <Route path="/add-recipe" element={<AddRecipeForm />} />
         </Routes>
