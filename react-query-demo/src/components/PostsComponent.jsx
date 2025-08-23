@@ -15,8 +15,10 @@ export default function PostsComponent() {
     refetch,
     isFetching,
   } = useQuery("posts", fetchPosts, {
-    staleTime: 5000, // data stays fresh for 5s before refetching
-    cacheTime: 1000 * 60 * 5, // cache persists for 5 mins
+    staleTime: 5000,              // data stays fresh for 5s
+    cacheTime: 1000 * 60 * 5,     // cache persists 5 mins
+    refetchOnWindowFocus: true,   // 🔹 explicitly refetch on window focus
+    keepPreviousData: true,       // 🔹 keep old data while fetching new
   });
 
   if (isLoading) return <p>Loading posts...</p>;
