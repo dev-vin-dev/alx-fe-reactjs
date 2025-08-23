@@ -5,7 +5,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
-import Profile from "./pages/Profile";
+import Profile from "./components/Profile";
 import ProfileDetails from "./pages/ProfileDetails";
 import ProfileSettings from "./pages/ProfileSettings";
 import Login from "./pages/Login";
