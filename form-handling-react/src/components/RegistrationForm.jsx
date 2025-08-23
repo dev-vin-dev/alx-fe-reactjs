@@ -4,16 +4,29 @@ export default function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !email || !password) {
-      setError("All fields are required!");
+    let newErrors = {};
+
+    if (!username) {
+      newErrors.username = "Username is required";
+    }
+    if (!email) {
+      newErrors.email = "Email is required";
+    }
+    if (!password) {
+      newErrors.password = "Password is required";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
-    setError("");
+
+    setErrors({});
 
     try {
       const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -40,8 +53,9 @@ export default function RegistrationForm() {
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="border p-2 w-full mb-2"
+        className="border p-2 w-full mb-1"
       />
+      {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
 
       <input
         type="email"
@@ -49,8 +63,9 @@ export default function RegistrationForm() {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border p-2 w-full mb-2"
+        className="border p-2 w-full mb-1"
       />
+      {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
       <input
         type="password"
@@ -58,12 +73,11 @@ export default function RegistrationForm() {
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border p-2 w-full mb-2"
+        className="border p-2 w-full mb-1"
       />
+      {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
 
-      {error && <p className="text-red-500 mb-2">{error}</p>}
-
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded mt-2">
         Register
       </button>
     </form>
