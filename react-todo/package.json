@@ -31,9 +31,10 @@
     "vite": "^7.1.2"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
+     "testEnvironment": "jsdom",
+  "moduleFileExtensions": ["js", "jsx"],
+  "transform": {
+    "^.+\\.(js|jsx)$": "babel-jest"
     }
   }
 }
